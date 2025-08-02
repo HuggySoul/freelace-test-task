@@ -1,2 +1,52 @@
 :root {
+  --background-col: white;
+  --foreground-col: black;
+  --border-col: #c5c5c5;
+  --gray-text-col: #777777;
+  --primary-col: #f7ee55;
+  --attention-col: #da1515;
+  --popup-z-index: 10;
+  --modal-z-index: 20;
+}
+
+/* Обычный Montserrat (от 100 до 900) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Курсивный Montserrat (от 100 до 900) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+dialog {
+  border: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
