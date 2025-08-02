@@ -1,0 +1,17 @@
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY . .
+
+# Получаем порт из compose файла
+ARG APP_PORT
+ENV PORT=$APP_PORT
+
+EXPOSE ${APP_PORT}
+
+CMD [ "npm", "run", "dev" ]
