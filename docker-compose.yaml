@@ -1,0 +1,26 @@
+services:
+  client:
+    container_name: "client-cont"
+    image: "client-img"
+    build:
+      context: ./Client
+      args: # передаём порт внутрь клиента
+        - APP_PORT=${VITE_CLIENT_PORT}
+    ports:
+      - "${VITE_CLIENT_PORT}:${VITE_CLIENT_PORT}"
+    environment:
+      - VITE_CLIENT_PORT=${VITE_CLIENT_PORT}
+    volumes:
+      - ./Client:/app # для hmr
+      - /app/node_modules # не затираем node_modules
+  server:
+    container_name: "server-cont"
+    image: "server-img"
+    build:
+      context: ./Server
+      args: # передаём порт внутрь сервера
+        - APP_PORT=${SERVER_PORT}
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
