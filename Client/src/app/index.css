@@ -1,10 +1,16 @@
 :root {
   --background-col: white;
   --foreground-col: black;
+  --foreground-hover: #1a1a1a;
+  --foreground-active: #333333;
   --border-col: #c5c5c5;
   --gray-text-col: #777777;
   --primary-col: #f7ee55;
+  --primary-hover: #f3e829;
+  --primary-active: #d6cb13;
   --attention-col: #da1515;
+  --attention-hover: #e32f2f;
+  --attention-active: #b11212;
   --popup-z-index: 10;
   --modal-z-index: 20;
 }
