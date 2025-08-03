@@ -52,6 +52,14 @@ button {
   cursor: pointer;
 }
 
+select {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
 dialog {
   border: none;
 }

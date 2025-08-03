@@ -8,6 +8,7 @@ import { DeleteModal } from "../../../shared/ui/deleteModal";
 import { DeleteProduct } from "../../../shared/api";
 import { createPortal } from "react-dom";
 import { Tooltip } from "../tooltip";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
   products: Product[];
@@ -17,6 +18,7 @@ interface IProps {
 export const ProductRows = ({ products, setProducts }: IProps) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const deleteProduct = () => {
     if (!selectedProductId) return;
@@ -58,7 +60,10 @@ export const ProductRows = ({ products, setProducts }: IProps) => {
           </td>
           <td>
             <div className={st.btns}>
-              <button className={st.tableBtn}>
+              <button
+                onClick={() => navigate(`/product/${product.id}`)}
+                className={st.tableBtn}
+              >
                 <img className={st.editIcon} src={editIcon} alt="Редактировать" />
               </button>
               <button

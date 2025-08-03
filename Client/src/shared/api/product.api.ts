@@ -19,7 +19,7 @@ export const GetProductById = async (id: string) => {
   }
 };
 
-export const CreateProduct = async (product: Omit<Product, "id">) => {
+export const CreateProduct = async (product: Omit<Product, "id" | "createdAt">) => {
   try {
     return await ApiRequest<void>("/productTypes", {
       method: "POST",
