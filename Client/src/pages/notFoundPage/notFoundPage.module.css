@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.errNum {
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.errTxt {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.arrowIcon {
+  width: 30px;
+}
+
+.btnBlock {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border-radius: 10px;
+  border: none;
+}
