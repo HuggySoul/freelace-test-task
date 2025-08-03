@@ -15,6 +15,7 @@ interface IProps {
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
+/** Строки таблицы с товарами */
 export const ProductRows = ({ products, setProducts }: IProps) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);

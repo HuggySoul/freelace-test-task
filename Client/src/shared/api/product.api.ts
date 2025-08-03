@@ -1,6 +1,7 @@
 import type { Product } from "../types";
 import { ApiRequest } from "./requestTemplate";
 
+/** Получение всех позиций */
 export const GetProducts = async () => {
   try {
     return await ApiRequest<Product[]>("/productTypes");
@@ -10,6 +11,7 @@ export const GetProducts = async () => {
   }
 };
 
+/** Получение позиции по id */
 export const GetProductById = async (id: string) => {
   try {
     return await ApiRequest<Product>(`/productTypes/${id}`);
@@ -19,6 +21,7 @@ export const GetProductById = async (id: string) => {
   }
 };
 
+/** Добавление позиции */
 export const CreateProduct = async (product: Omit<Product, "id" | "createdAt">) => {
   try {
     return await ApiRequest<void>("/productTypes", {
@@ -34,6 +37,7 @@ export const CreateProduct = async (product: Omit<Product, "id" | "createdAt">) 
   }
 };
 
+/** Редактирование позиции */
 export const EditProduct = async (id: string, product: Partial<Omit<Product, "id">>) => {
   try {
     return await ApiRequest<void>(`/productTypes/${id}`, {
@@ -49,6 +53,7 @@ export const EditProduct = async (id: string, product: Partial<Omit<Product, "id
   }
 };
 
+/** Удаление позиции */
 export const DeleteProduct = async (id: string) => {
   try {
     return await ApiRequest<void>(`/productTypes/${id}`, {

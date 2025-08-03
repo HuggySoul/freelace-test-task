@@ -4,6 +4,8 @@ interface IProps {
   children: React.ReactNode;
   content?: string;
 }
+
+/** Обёртка для создания всплывающей подсказки */
 export const Tooltip = ({ children, content }: IProps) => {
   return (
     <div

@@ -6,6 +6,7 @@ interface IProps {
   deleteProduct: () => void;
 }
 
+/** Модальное окно для подтверждения удаления позиции */
 export const DeleteModal = ({ closeModal, deleteProduct }: IProps) => {
   useEffect(() => {
     // Блокируем скролл на body при монтировании окна
