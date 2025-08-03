@@ -46,36 +46,38 @@ export const ProductRows = ({ products, setProducts }: IProps) => {
 
   return (
     <>
-      {products.map((product, i) => (
-        <tr key={product.id}>
-          <td scope="row">{i + 1}</td>
-          <td>{product.packsNumber}</td>
-          <td>{product.packageType}</td>
-          <td>{new Date(product.createdAt).toLocaleDateString("ru-RU")}</td>
-          <td>{product.isArchived ? "Активно" : "Архив"}</td>
-          <td>
-            <Tooltip content={product.description}>
-              <img className={st.infoIcon} src={infoIcon} alt="Описание" />
-            </Tooltip>
-          </td>
-          <td>
-            <div className={st.btns}>
-              <button
-                onClick={() => navigate(`/product/${product.id}`)}
-                className={st.tableBtn}
-              >
-                <img className={st.editIcon} src={editIcon} alt="Редактировать" />
-              </button>
-              <button
-                onClick={() => openDeletingModal(product.id)}
-                className={st.tableBtn}
-              >
-                <img className={st.deleteIcon} src={deleteIcon} alt="Удалить" />
-              </button>
-            </div>
-          </td>
-        </tr>
-      ))}
+      {products
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+        .map((product, i) => (
+          <tr key={product.id}>
+            <td scope="row">{i + 1}</td>
+            <td>{product.packsNumber}</td>
+            <td>{product.packageType}</td>
+            <td>{new Date(product.createdAt).toLocaleDateString("ru-RU")}</td>
+            <td>{product.isArchived ? "Активно" : "Архив"}</td>
+            <td>
+              <Tooltip content={product.description}>
+                <img className={st.infoIcon} src={infoIcon} alt="Описание" />
+              </Tooltip>
+            </td>
+            <td>
+              <div className={st.btns}>
+                <button
+                  onClick={() => navigate(`/product/${product.id}`)}
+                  className={st.tableBtn}
+                >
+                  <img className={st.editIcon} src={editIcon} alt="Редактировать" />
+                </button>
+                <button
+                  onClick={() => openDeletingModal(product.id)}
+                  className={st.tableBtn}
+                >
+                  <img className={st.deleteIcon} src={deleteIcon} alt="Удалить" />
+                </button>
+              </div>
+            </td>
+          </tr>
+        ))}
 
       {isDeleteModalOpen &&
         createPortal(
