@@ -7,6 +7,7 @@ export const AppRouter = () => {
     <Router>
       <Routes>
         <Route path={routes.productList.path} element={<ProductList />} />
+        {/* <Route path={routes.createProduct.path} element={} /> */}
         {/* <Route path={routes.notFound.path} element={<NotFoundPage />} /> */}
       </Routes>
     </Router>

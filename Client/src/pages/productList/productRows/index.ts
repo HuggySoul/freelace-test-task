@@ -1,0 +1,1 @@
+export { ProductRows } from "./productRows";

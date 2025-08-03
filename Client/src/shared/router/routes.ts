@@ -3,8 +3,12 @@ export const routes = {
     path: "/",
   },
 
-  productForm: {
+  editProduct: {
     path: "/product/:id",
+  },
+
+  createProduct: {
+    path: "/product",
   },
 
   notFound: {

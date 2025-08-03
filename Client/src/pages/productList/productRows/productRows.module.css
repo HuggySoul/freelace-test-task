@@ -1,0 +1,22 @@
+.tableBtn {
+  border: none;
+  background: none;
+}
+
+.tableBtn:hover {
+  scale: 1.1;
+}
+
+.editIcon {
+  height: 24px;
+}
+
+.deleteIcon {
+  height: 24px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

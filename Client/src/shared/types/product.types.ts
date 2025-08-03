@@ -6,5 +6,5 @@ export type Product = {
   packageType: PackageType;
   isArchived: boolean;
   createdAt: string;
-  description: string;
+  description?: string;
 };

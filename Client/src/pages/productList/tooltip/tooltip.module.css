@@ -1,0 +1,30 @@
+.tooltip {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%) translateX(-50%);
+  color: var(--background-col);
+  border-radius: 10px;
+  padding: 8px;
+  background-color: var(--foreground-col);
+  width: 300px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-weight: 600;
+  text-align: left;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+
+.tooltip:hover {
+  .content {
+    display: flex;
+  }
+}

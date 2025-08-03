@@ -3,6 +3,7 @@
   --foreground-col: black;
   --foreground-hover: #1a1a1a;
   --foreground-active: #333333;
+  --modal-background-col: rgba(0, 0, 0, 0.3);
   --border-col: #c5c5c5;
   --gray-text-col: #777777;
   --primary-col: #f7ee55;
@@ -39,6 +40,12 @@
   font-family: "Montserrat";
   padding: 0;
   margin: 0;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 button {
