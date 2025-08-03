@@ -24,3 +24,5 @@ services:
       - "${SERVER_PORT}:${SERVER_PORT}"
     environment:
       - SERVER_PORT=${SERVER_PORT}
+    volumes:
+      - ./Server/db.json:/app/db.json
