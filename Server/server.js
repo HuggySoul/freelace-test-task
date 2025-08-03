@@ -6,7 +6,7 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 dotenv.config({ path: "../.env" });
-const PORT = process.env.SERVER_PORT || 8000;
+const PORT = process.env.SERVER_PORT || 8081;
 
 const schemaPackageTypes = z.enum(["компрессия", "некомпрессия"]);
 
