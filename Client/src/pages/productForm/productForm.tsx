@@ -38,7 +38,9 @@ export const ProductForm = () => {
     if (Object.keys(errors).length === 0) {
       if (!isEditMode) {
         CreateProduct(formState.values)
-          .then(() => {
+          .then((res) => {
+            if (!res) return;
+
             navigate("/");
           })
           .catch((err) => {
@@ -46,7 +48,9 @@ export const ProductForm = () => {
           });
       } else {
         EditProduct(id, formState.values)
-          .then(() => {
+          .then((res) => {
+            if (!res) return;
+
             navigate("/");
           })
           .catch((err) => {

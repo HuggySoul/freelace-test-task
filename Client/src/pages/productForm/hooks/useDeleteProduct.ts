@@ -11,8 +11,11 @@ export const useDeleteProduct = (id: string | undefined) => {
     if (!id) return;
 
     DeleteProduct(id)
-      .then(() => {
-        closeModal();
+      .then((res) => {
+        if (!res) {
+          closeModal();
+          return;
+        }
         navigate("/");
       })
       .catch((error) => {
